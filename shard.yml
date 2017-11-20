@@ -1,4 +1,5 @@
 name: crystush
+description: Interpreter for Push 3 language
 version: 0.1.0
 
 authors:
