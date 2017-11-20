@@ -23,7 +23,6 @@ describe Crystush do
     program = list[0]
     list = Crystush::Program.new(program).breakup_list(program)
     list[0].should eq "( ( 1 ) )"
-
   end
 
   it "should handle every listed instructions" do
@@ -47,7 +46,6 @@ describe Crystush do
     # INTEGER STACK: ( 6 )
     stacks.integer_stack.size.should eq(1)
     stacks.integer_stack[0].should eq(6)
-
   end
 
   it "should properly evaluate simple example 2" do
@@ -64,7 +62,6 @@ describe Crystush do
     stacks.integer_stack.size.should eq(1)
     stacks.integer_stack[0].should eq(1)
   end
-
 
   it "should properly evaluate tiny program 1" do
     # Here is a tiny program that adds an integer pre-loaded onto the stack to itself:
@@ -85,7 +82,6 @@ describe Crystush do
     stacks = Crystush::Program.new(program).evaluate(preload_stacks)
     stacks.integer_stack.size.should eq(1)
     stacks.integer_stack[0].should eq(8)
-
   end
 
   it "should handle the recursive factorial example" do
@@ -98,6 +94,5 @@ describe Crystush do
   end
 
   # endregion
-
 
 end

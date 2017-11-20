@@ -24,6 +24,4 @@ describe Crystush do
     stacks.float_stack.size.should eq(1)
     stacks.float_stack[0].should eq(1.0)
   end
-
-
 end

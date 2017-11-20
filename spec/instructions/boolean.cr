@@ -1,5 +1,4 @@
 describe Crystush do
-
   it "should handle the boolean type" do
     stack = Crystush::Program.new("TRUE").evaluate.boolean_stack
     stack.size.should eq(1)
@@ -69,6 +68,4 @@ describe Crystush do
     stack[0].should eq(true)
     stack[1].should eq(false)
   end
-
-
 end

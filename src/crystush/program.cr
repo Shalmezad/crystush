@@ -1,6 +1,5 @@
 module Crystush
   class Program
-
     INSTRUCTIONS = [
       "BOOLEAN.=",
       "BOOLEAN.AND",
@@ -53,7 +52,7 @@ module Crystush
       "INTEGER.MIN",
       "INTEGER.POP",
       "INTEGER.STACKDEPTH",
-      "INTEGER.SWAP"
+      "INTEGER.SWAP",
     ]
 
     property program : String = ""
@@ -94,7 +93,7 @@ module Crystush
           loop do
             break if list.empty?
             stacks.exec_stack.push list.pop
-          end 
+          end
         else
           # Else if it's a literal
           # push onto proper stack
@@ -110,14 +109,13 @@ module Crystush
             stacks.integer_stack.push token.to_i
           end
         end
-
       end
       return stacks
     end
 
-    def breakup_list (list_token : String) : Array(String)
+    def breakup_list(list_token : String) : Array(String)
       # This will remove the start/end parenthesis
-      list_string = list_token.sub(/^\s*\(\s*/,"").sub(/\s*\)\s*$/,"")
+      list_string = list_token.sub(/^\s*\(\s*/, "").sub(/\s*\)\s*$/, "")
       # Now that the wrapping parenthesis are gone:
       list = list_string.split
       result_list = [] of String
@@ -362,14 +360,14 @@ module Crystush
         return if stacks.float_stack.size < 2
         rhs = stacks.float_stack.pop
         lhs = stacks.float_stack.pop
-        result = Math.max(lhs,rhs)
+        result = Math.max(lhs, rhs)
         stacks.float_stack.push result
       elsif instruction == "FLOAT.MIN"
         # We need 2 floats:
         return if stacks.float_stack.size < 2
         rhs = stacks.float_stack.pop
         lhs = stacks.float_stack.pop
-        result = Math.min(lhs,rhs)
+        result = Math.min(lhs, rhs)
         stacks.float_stack.push result
       elsif instruction == "FLOAT.POP"
         # We need 1 float:
@@ -488,14 +486,14 @@ module Crystush
         return if stacks.integer_stack.size < 2
         rhs = stacks.integer_stack.pop
         lhs = stacks.integer_stack.pop
-        result = Math.max(lhs,rhs)
+        result = Math.max(lhs, rhs)
         stacks.integer_stack.push result
       elsif instruction == "INTEGER.MIN"
         # We need 2 integers:
         return if stacks.integer_stack.size < 2
         rhs = stacks.integer_stack.pop
         lhs = stacks.integer_stack.pop
-        result = Math.min(lhs,rhs)
+        result = Math.min(lhs, rhs)
         stacks.integer_stack.push result
       elsif instruction == "INTEGER.POP"
         # We need 1 integer:
@@ -515,6 +513,5 @@ module Crystush
         raise "Unknown instruction: #{instruction}"
       end
     end
-
   end
 end

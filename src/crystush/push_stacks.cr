@@ -13,6 +13,5 @@ module Crystush
       io << "EXEC   : " << exec_stack << "\n"
       io << "CODE   : " << code_stack << "\n"
     end
-
   end
 end
