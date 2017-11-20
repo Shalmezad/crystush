@@ -1,5 +1,7 @@
 # crystush
 
+[![GitHub release](https://img.shields.io/github/release/Shalmezad/crystush.svg)](https://github.com/Shalmezad/crystush/releases)
+
 Interpreter for the [Push 3 language](http://faculty.hampshire.edu/lspector/push3-description.html) (based on work by Lee Spector, Maarten Keijzer, Jon Klein, Chris Perry and Tom Helmuth, among others)
 
 ## Installation
