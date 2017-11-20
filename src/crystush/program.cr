@@ -4,7 +4,6 @@ module Crystush
     INSTRUCTIONS = [
       "BOOLEAN.=",
       "BOOLEAN.AND",
-      #"BOOLEAN.DEFINE",
       "BOOLEAN.DUP",
       "BOOLEAN.FLUSH",
       "BOOLEAN.FROMFLOAT",
@@ -12,13 +11,8 @@ module Crystush
       "BOOLEAN.NOT",
       "BOOLEAN.OR",
       "BOOLEAN.POP",
-      #"BOOLEAN.RAND",
-      #"BOOLEAN.ROT",
-      #"BOOLEAN.SHOVE",
       "BOOLEAN.STACKDEPTH",
       "BOOLEAN.SWAP",
-      #"BOOLEAN.YANK",
-      #"BOOLEAN.YANKDUP",
       "CODE.DO",
       "CODE.DUP",
       "CODE.IF",
@@ -32,7 +26,6 @@ module Crystush
       "FLOAT.=",
       "FLOAT.>",
       "FLOAT.COS",
-      #"FLOAT.DEFINE",
       "FLOAT.DUP",
       "FLOAT.FLUSH",
       "FLOAT.FROMBOOLEAN",
@@ -40,15 +33,10 @@ module Crystush
       "FLOAT.MAX",
       "FLOAT.MIN",
       "FLOAT.POP",
-      #"FLOAT.RAND",
-      #"FLOAT.ROT",
-      #"FLOAT.SHOVE",
       "FLOAT.SIN",
       "FLOAT.STACKDEPTH",
       "FLOAT.SWAP",
       "FLOAT.TAN",
-      #"FLOAT.YANK",
-      #"FLOAT.YANKDUP",
       "INTEGER.%",
       "INTEGER.*",
       "INTEGER.+",
@@ -57,7 +45,6 @@ module Crystush
       "INTEGER.<",
       "INTEGER.=",
       "INTEGER.>",
-      #"INTEGER.DEFINE",
       "INTEGER.DUP",
       "INTEGER.FLUSH",
       "INTEGER.FROMBOOLEAN",
@@ -65,13 +52,8 @@ module Crystush
       "INTEGER.MAX",
       "INTEGER.MIN",
       "INTEGER.POP",
-      #"INTEGER.RAND",
-      #"INTEGER.ROT",
-      #"INTEGER.SHOVE",
       "INTEGER.STACKDEPTH",
       "INTEGER.SWAP"
-      #"INTEGER.YANK",
-      #"INTEGER.YANKDUP",
     ]
 
     property program : String = ""
@@ -82,7 +64,6 @@ module Crystush
     end
 
     def evaluate(stacks = PushStacks.new) : PushStacks
-      #stacks = PushStacks.new
       # See if top-level-push-code is set:
       if configuration.top_level_push_code
         # Code will be pushed onto code stack prior to execution:
@@ -135,11 +116,8 @@ module Crystush
     end
 
     def breakup_list (list_token : String) : Array(String)
-      #puts "Breaking up list '#{list_token}'"
       # This will remove the start/end parenthesis
       list_string = list_token.sub(/^\s*\(\s*/,"").sub(/\s*\)\s*$/,"")
-      #puts "Stripped first and last parenthesis:"
-      #puts "Resulting list: '#{list_string}'"
       # Now that the wrapping parenthesis are gone:
       list = list_string.split
       result_list = [] of String
@@ -180,7 +158,6 @@ module Crystush
     end
 
     def execute_instruction(instruction : String, stacks : PushStacks)
-      #puts "Executing instruction: #{instruction}"
       if instruction.starts_with? "BOOLEAN."
         execute_boolean_instruction(instruction, stacks)
       elsif instruction.starts_with? "CODE."
@@ -190,6 +167,7 @@ module Crystush
       elsif instruction.starts_with? "INTEGER."
         execute_integer_instruction(instruction, stacks)
       else
+        # TODO: Use a configuration to decide whether to raise exception or quietly ignore
         raise "Unknown instruction: #{instruction}"
       end
     end
