@@ -1,6 +1,7 @@
 # crystush
 
 [![GitHub release](https://img.shields.io/github/release/Shalmezad/crystush.svg)](https://github.com/Shalmezad/crystush/releases)
+[![Build Status](https://travis-ci.org/Shalmezad/crystush.svg?branch=master)](https://travis-ci.org/Shalmezad/crystush)
 
 Interpreter for the [Push 3 language](http://faculty.hampshire.edu/lspector/push3-description.html) (based on work by Lee Spector, Maarten Keijzer, Jon Klein, Chris Perry and Tom Helmuth, among others)
 
