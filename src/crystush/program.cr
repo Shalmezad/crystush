@@ -101,9 +101,9 @@ module Crystush
             stacks.boolean_stack.push true
           elsif token == "FALSE"
             stacks.boolean_stack.push false
-          elsif /\d*\.\d*/.match(token)
+          elsif /\d+\.\d+/.match(token)
             stacks.float_stack.push token.to_f
-          elsif /\d*/.match(token)
+          elsif /\d+/.match(token)
             stacks.integer_stack.push token.to_i
           else
             # TODO: check config to see if should raise exception or fail silently
