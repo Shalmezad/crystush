@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta id="repository-name" content="github.com/Shalmezad/crystush">
+  <link href="../css/style.css" rel="stylesheet" type="text/css" />
+  <script type="text/javascript" src="../js/doc.js"></script>
+  <title>Crystush::Program - github.com/Shalmezad/crystush</title>
+</head>
+<body>
+
+<div id="types-list">
+  <div id="search-box">
+    <input type="search" id="search-input" placeholder="Search...">
+  </div>
+
+  <ul>
+    <li><a href="../index.html">README</a></li>
+  </ul>
+
+  <ul>
+  
+  <li class="parent open current" data-id="github.com/Shalmezad/crystush/Crystush" data-name="crystush">
+      <a href="../Crystush.html">Crystush</a>
+      
+        <ul>
+  
+  <li class=" " data-id="github.com/Shalmezad/crystush/Crystush/Configuration" data-name="crystush::configuration">
+      <a href="../Crystush/Configuration.html">Configuration</a>
+      
+    </li>
+  
+  <li class=" current" data-id="github.com/Shalmezad/crystush/Crystush/Program" data-name="crystush::program">
+      <a href="../Crystush/Program.html">Program</a>
+      
+    </li>
+  
+  <li class=" " data-id="github.com/Shalmezad/crystush/Crystush/PushStacks" data-name="crystush::pushstacks">
+      <a href="../Crystush/PushStacks.html">PushStacks</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+</div>
+
+<div id="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> Crystush::Program
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Crystush/Program.html">Crystush::Program</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>Defined in:</h2>
+  
+    
+      <a href="https://github.com/Shalmezad/crystush/blob/c22668b097ff5c98723313bd27fe9cafe4ae2c8e/src/crystush/program.cr#L2" target="_blank">crystush/program.cr</a>
+    
+    <br/>
+  
+
+
+
+  
+    <h2>Constant Summary</h2>
+  
+  <dl>
+    
+      <dt class="entry-const" id="INSTRUCTIONS">
+        <strong>INSTRUCTIONS</strong> = <code>[<span class="s">&quot;BOOLEAN.&#61;&quot;</span>, <span class="s">&quot;BOOLEAN.AND&quot;</span>, <span class="s">&quot;BOOLEAN.DUP&quot;</span>, <span class="s">&quot;BOOLEAN.FLUSH&quot;</span>, <span class="s">&quot;BOOLEAN.FROMFLOAT&quot;</span>, <span class="s">&quot;BOOLEAN.FROMINTEGER&quot;</span>, <span class="s">&quot;BOOLEAN.NOT&quot;</span>, <span class="s">&quot;BOOLEAN.OR&quot;</span>, <span class="s">&quot;BOOLEAN.POP&quot;</span>, <span class="s">&quot;BOOLEAN.STACKDEPTH&quot;</span>, <span class="s">&quot;BOOLEAN.SWAP&quot;</span>, <span class="s">&quot;CODE.DO&quot;</span>, <span class="s">&quot;CODE.DUP&quot;</span>, <span class="s">&quot;CODE.IF&quot;</span>, <span class="s">&quot;CODE.QUOTE&quot;</span>, <span class="s">&quot;FLOAT.&#37;&quot;</span>, <span class="s">&quot;FLOAT.*&quot;</span>, <span class="s">&quot;FLOAT.&#43;&quot;</span>, <span class="s">&quot;FLOAT.-&quot;</span>, <span class="s">&quot;FLOAT./&quot;</span>, <span class="s">&quot;FLOAT.&lt;&quot;</span>, <span class="s">&quot;FLOAT.&#61;&quot;</span>, <span class="s">&quot;FLOAT.&gt;&quot;</span>, <span class="s">&quot;FLOAT.COS&quot;</span>, <span class="s">&quot;FLOAT.DUP&quot;</span>, <span class="s">&quot;FLOAT.FLUSH&quot;</span>, <span class="s">&quot;FLOAT.FROMBOOLEAN&quot;</span>, <span class="s">&quot;FLOAT.FROMINTEGER&quot;</span>, <span class="s">&quot;FLOAT.MAX&quot;</span>, <span class="s">&quot;FLOAT.MIN&quot;</span>, <span class="s">&quot;FLOAT.POP&quot;</span>, <span class="s">&quot;FLOAT.SIN&quot;</span>, <span class="s">&quot;FLOAT.STACKDEPTH&quot;</span>, <span class="s">&quot;FLOAT.SWAP&quot;</span>, <span class="s">&quot;FLOAT.TAN&quot;</span>, <span class="s">&quot;INTEGER.&#37;&quot;</span>, <span class="s">&quot;INTEGER.*&quot;</span>, <span class="s">&quot;INTEGER.&#43;&quot;</span>, <span class="s">&quot;INTEGER.-&quot;</span>, <span class="s">&quot;INTEGER./&quot;</span>, <span class="s">&quot;INTEGER.&lt;&quot;</span>, <span class="s">&quot;INTEGER.&#61;&quot;</span>, <span class="s">&quot;INTEGER.&gt;&quot;</span>, <span class="s">&quot;INTEGER.DUP&quot;</span>, <span class="s">&quot;INTEGER.FLUSH&quot;</span>, <span class="s">&quot;INTEGER.FROMBOOLEAN&quot;</span>, <span class="s">&quot;INTEGER.FROMFLOAT&quot;</span>, <span class="s">&quot;INTEGER.MAX&quot;</span>, <span class="s">&quot;INTEGER.MIN&quot;</span>, <span class="s">&quot;INTEGER.POP&quot;</span>, <span class="s">&quot;INTEGER.STACKDEPTH&quot;</span>, <span class="s">&quot;INTEGER.SWAP&quot;</span>]</code>
+      </dt>
+      
+    
+  </dl>
+
+
+
+  <h2>Constructors</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new%28program%3AString%29-class-method" class="signature"><strong>.new</strong>(program : String)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+  <h2>Instance Method Summary</h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#breakup_list%28list_token%3AString%29%3AArray%28String%29-instance-method" class="signature"><strong>#breakup_list</strong>(list_token : String) : Array(String)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#configuration%3AConfiguration-instance-method" class="signature"><strong>#configuration</strong> : Configuration</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#configuration%3D%28configuration%3AConfiguration%29-instance-method" class="signature"><strong>#configuration=</strong>(configuration : Configuration)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#evaluate%28stacks%3DPushStacks.new%29%3APushStacks-instance-method" class="signature"><strong>#evaluate</strong>(stacks = <span class="t">PushStacks</span>.<span class="k">new</span>) : PushStacks</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#execute_boolean_instruction%28instruction%3AString%2Cstacks%3APushStacks%29-instance-method" class="signature"><strong>#execute_boolean_instruction</strong>(instruction : String, stacks : PushStacks)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#execute_code_instruction%28instruction%3AString%2Cstacks%3APushStacks%29-instance-method" class="signature"><strong>#execute_code_instruction</strong>(instruction : String, stacks : PushStacks)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#execute_float_instruction%28instruction%3AString%2Cstacks%3APushStacks%29-instance-method" class="signature"><strong>#execute_float_instruction</strong>(instruction : String, stacks : PushStacks)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#execute_instruction%28instruction%3AString%2Cstacks%3APushStacks%29-instance-method" class="signature"><strong>#execute_instruction</strong>(instruction : String, stacks : PushStacks)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#execute_integer_instruction%28instruction%3AString%2Cstacks%3APushStacks%29-instance-method" class="signature"><strong>#execute_integer_instruction</strong>(instruction : String, stacks : PushStacks)</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#is_instruction%28token%3AString%29%3ABool-instance-method" class="signature"><strong>#is_instruction</strong>(token : String) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#is_list%28token%3AString%29%3ABool-instance-method" class="signature"><strong>#is_list</strong>(token : String) : Bool</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#program%3AString-instance-method" class="signature"><strong>#program</strong> : String</a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#program%3D%28program%3AString%29-instance-method" class="signature"><strong>#program=</strong>(program : String)</a>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>Constructor Detail</h2>
+  
+    <div class="entry-detail" id="new&#40;program:String&#41;-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(program : String)
+
+        <a class="method-permalink" href="#new%28program%3AString%29-class-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/Shalmezad/crystush/blob/c22668b097ff5c98723313bd27fe9cafe4ae2c8e/src/crystush/program.cr#L61" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+  <h2>Instance Method Detail</h2>
+  
+    <div class="entry-detail" id="breakup_list&#40;list_token:String&#41;:Array&#40;String&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>breakup_list</strong>(list_token : String) : Array(String)
+
+        <a class="method-permalink" href="#breakup_list%28list_token%3AString%29%3AArray%28String%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/Shalmezad/crystush/blob/c22668b097ff5c98723313bd27fe9cafe4ae2c8e/src/crystush/program.cr#L117" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="configuration:Configuration-instance-method">
+      <div class="signature">
+        
+        def <strong>configuration</strong> : <a href="../Crystush/Configuration.html">Configuration</a>
+
+        <a class="method-permalink" href="#configuration%3AConfiguration-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/Shalmezad/crystush/blob/c22668b097ff5c98723313bd27fe9cafe4ae2c8e/src/crystush/program.cr#L59" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="configuration&#61;&#40;configuration:Configuration&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>configuration=</strong>(configuration : <a href="../Crystush/Configuration.html">Configuration</a>)
+
+        <a class="method-permalink" href="#configuration%3D%28configuration%3AConfiguration%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/Shalmezad/crystush/blob/c22668b097ff5c98723313bd27fe9cafe4ae2c8e/src/crystush/program.cr#L59" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="evaluate&#40;stacks&#61;PushStacks.new&#41;:PushStacks-instance-method">
+      <div class="signature">
+        
+        def <strong>evaluate</strong>(stacks = <span class="t">PushStacks</span>.<span class="k">new</span>) : <a href="../Crystush/PushStacks.html">PushStacks</a>
+
+        <a class="method-permalink" href="#evaluate%28stacks%3DPushStacks.new%29%3APushStacks-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/Shalmezad/crystush/blob/c22668b097ff5c98723313bd27fe9cafe4ae2c8e/src/crystush/program.cr#L65" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="execute_boolean_instruction&#40;instruction:String,stacks:PushStacks&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>execute_boolean_instruction</strong>(instruction : String, stacks : <a href="../Crystush/PushStacks.html">PushStacks</a>)
+
+        <a class="method-permalink" href="#execute_boolean_instruction%28instruction%3AString%2Cstacks%3APushStacks%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/Shalmezad/crystush/blob/c22668b097ff5c98723313bd27fe9cafe4ae2c8e/src/crystush/program.cr#L174" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="execute_code_instruction&#40;instruction:String,stacks:PushStacks&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>execute_code_instruction</strong>(instruction : String, stacks : <a href="../Crystush/PushStacks.html">PushStacks</a>)
+
+        <a class="method-permalink" href="#execute_code_instruction%28instruction%3AString%2Cstacks%3APushStacks%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/Shalmezad/crystush/blob/c22668b097ff5c98723313bd27fe9cafe4ae2c8e/src/crystush/program.cr#L240" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="execute_float_instruction&#40;instruction:String,stacks:PushStacks&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>execute_float_instruction</strong>(instruction : String, stacks : <a href="../Crystush/PushStacks.html">PushStacks</a>)
+
+        <a class="method-permalink" href="#execute_float_instruction%28instruction%3AString%2Cstacks%3APushStacks%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/Shalmezad/crystush/blob/c22668b097ff5c98723313bd27fe9cafe4ae2c8e/src/crystush/program.cr#L271" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="execute_instruction&#40;instruction:String,stacks:PushStacks&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>execute_instruction</strong>(instruction : String, stacks : <a href="../Crystush/PushStacks.html">PushStacks</a>)
+
+        <a class="method-permalink" href="#execute_instruction%28instruction%3AString%2Cstacks%3APushStacks%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/Shalmezad/crystush/blob/c22668b097ff5c98723313bd27fe9cafe4ae2c8e/src/crystush/program.cr#L159" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="execute_integer_instruction&#40;instruction:String,stacks:PushStacks&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>execute_integer_instruction</strong>(instruction : String, stacks : <a href="../Crystush/PushStacks.html">PushStacks</a>)
+
+        <a class="method-permalink" href="#execute_integer_instruction%28instruction%3AString%2Cstacks%3APushStacks%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/Shalmezad/crystush/blob/c22668b097ff5c98723313bd27fe9cafe4ae2c8e/src/crystush/program.cr#L404" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="is_instruction&#40;token:String&#41;:Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>is_instruction</strong>(token : String) : Bool
+
+        <a class="method-permalink" href="#is_instruction%28token%3AString%29%3ABool-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/Shalmezad/crystush/blob/c22668b097ff5c98723313bd27fe9cafe4ae2c8e/src/crystush/program.cr#L151" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="is_list&#40;token:String&#41;:Bool-instance-method">
+      <div class="signature">
+        
+        def <strong>is_list</strong>(token : String) : Bool
+
+        <a class="method-permalink" href="#is_list%28token%3AString%29%3ABool-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/Shalmezad/crystush/blob/c22668b097ff5c98723313bd27fe9cafe4ae2c8e/src/crystush/program.cr#L155" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="program:String-instance-method">
+      <div class="signature">
+        
+        def <strong>program</strong> : String
+
+        <a class="method-permalink" href="#program%3AString-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/Shalmezad/crystush/blob/c22668b097ff5c98723313bd27fe9cafe4ae2c8e/src/crystush/program.cr#L58" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="program&#61;&#40;program:String&#41;-instance-method">
+      <div class="signature">
+        
+        def <strong>program=</strong>(program : String)
+
+        <a class="method-permalink" href="#program%3D%28program%3AString%29-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/Shalmezad/crystush/blob/c22668b097ff5c98723313bd27fe9cafe4ae2c8e/src/crystush/program.cr#L58" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>
