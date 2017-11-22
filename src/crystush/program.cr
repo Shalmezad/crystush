@@ -97,16 +97,17 @@ module Crystush
         else
           # Else if it's a literal
           # push onto proper stack
-          # TODO: Get other types in here
-          # TODO: Handle float check better
           if token == "TRUE"
             stacks.boolean_stack.push true
           elsif token == "FALSE"
             stacks.boolean_stack.push false
-          elsif token.includes? "."
+          elsif /\d*\.\d*/.match(token)
             stacks.float_stack.push token.to_f
-          else
+          elsif /\d*/.match(token)
             stacks.integer_stack.push token.to_i
+          else
+            # TODO: check config to see if should raise exception or fail silently
+            puts "Unknown symbol: '#{token}'"
           end
         end
       end
