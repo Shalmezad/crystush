@@ -1,6 +1,6 @@
 name: crystush
 description: Interpreter for Push 3 language
-version: 0.1.1
+version: 0.1.2
 
 authors:
   - Richard Wardin <richardw@hesonline.com>
